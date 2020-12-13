@@ -72,3 +72,24 @@ print(df['animal'].value_counts())
 # 18. Sort df first by the values in the 'age' in decending order, 
 # then by the value in the 'visits' column in ascending order (so 
 # row i should be first, and row d should be last)
+
+print(df.sort_values(['age','visits'],ascending=[False,True]))
+
+# 19. The 'priority' column contains the values 'yes' and 'no'. 
+# Replace this column with a column of boolean values: 'yes' 
+# should be True and 'no' should be False
+
+df['priority'][df['priority']=='yes']=True
+df['priority'][df['priority']=='no']=False
+
+print(df)
+
+# 20. In the 'animal' column, change the 'snake' entries to 'python'
+df['animal'][df['animal']=='snake']='python'
+print(df)
+
+# 21. For each animal type and each number of visits, find the mean 
+# age. In other words, each row is an animal, each column is a number 
+# of visits and the values are the mean ages (hint: use a pivot table)
+
+print(pd.pivot_table(df,values='age', index='animal', columns='visits',aggfunc=np.mean))
