@@ -5,7 +5,7 @@ from pymongo import MongoClient
 import pandas as pd
 
 # Establishes a connection with Cluster0
-myclient = MongoClient("mongodb+srv://student0:1234@cluster0.mwj83.mongodb.net/sample_airbnb?retryWrites=true&w=majority")
+myclient = MongoClient("XXXX")
 
 # Lists all the DBs in Cluster0
 print(myclient.list_database_names())
